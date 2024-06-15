@@ -15,3 +15,16 @@ function createPointElements(container, data) {
         .on('mouseover', handleMouseOver)
         .on('mouseout', handleMouseOut);
 }
+
+//change CSS colors
+function handleMouseOver(event, d) {
+    d3.select(this).style('background-color', 'firebrick');
+}
+function handleMouseOut(event, d) {
+    d3.select(this).style('background-color', null);
+}
+
+//Runs CreatePointElements for the selected container and datapoints array.
+function initialize() {
+    createPointElements(d3.select('#dataContainer'), data);
+}
